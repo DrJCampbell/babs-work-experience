@@ -7,22 +7,24 @@ Using scanpy do this: scRNA-seq pbmc3k
 
 
 ### Setting up the environment
-Firstly install micromamba with this command
+Firstly install micromamba with this command  
 `"${SHELL}" <(curl -L micro.mamba.pm/install.sh)`
 
-Once installed navigate to the directory of your choice and create your project using:
+Once installed navigate to the directory of your choice and create your project using:  
 `micromamba create -n [project name] --yes`
 
-To enter your new environment, enter:
+To enter your new environment, enter:  
 `micromamba activate [project name]`
 
-Install the latest version of python and use it to install the required packages.
-```micromamba install python
+Install the latest version of python and use it to install the required packages.  
+```sh
+micromamba install python
 
 pip install scanpy
 pip install leidenalg
 pip install jupyter
 pip install pandas
-pip install numpy```
+pip install numpy
+```
 
-# test
+### test
