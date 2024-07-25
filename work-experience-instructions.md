@@ -126,6 +126,37 @@ In the __Filters__ tab select the file you exported using the above code for the
 In the __Attributes__ tab make sure __Features__ is selected and under __GENE__ for __Ensembl__ deselect everything only keeping Gene stable ID and Gene name since this is the information we are interested in.  
 Finally on the left side under the website header click results and export the data to a CSV file.
 
+Using the gene name you can now find the Immune cell expression cluster for use later when labeling the leiden umap plot. You can do this by searching up the name of the gene in the [Human Protein Atlas](https://www.proteinatlas.org/) as shown below.
+
+```
+new_cluster_names = [
+    "Unknown cluster 0",
+    "B",
+    "Dendritic 0",
+    "Monocytes 0",
+    "Unknown cluster 1",
+    "Unknown cluster 2",
+    "Neurophils 0",
+    "NK",
+    "Monocytes 1",
+    "Unknown cluster 3",
+    "Neutrophils 1",
+    "Neutrophils 2",
+    "Monocytes + Neurophils",
+    "Dendritic 1",
+    "Unknown cluster 4",
+    "Unknown cluster 5",
+    "Unknown cluster 6",
+    "Plasmacytoid DCS 0",
+    "Unknown cluster 7",
+    "Plasmocytoid DCS 1",
+    "Unknown cluster 8",
+    "Unknown cluster 9",
+    "Unknown cluster 10",
+]
+adata.rename_categories("leiden", new_cluster_names)
+```
+
 > if you encounter any warnings when running through your code, the best thing to do is ignore them! (don't actually follow this advice) The easiest way to hide the error messages is by including the following line at the top of your code:
 > ```
 > from warnings import simplefilter
