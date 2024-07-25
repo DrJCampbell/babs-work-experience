@@ -6,7 +6,7 @@ Windows enables installation of a Linux distrubution through the Windows Subsyst
 
 1. Click the Start button on the Windows Task Bar.
 2. Find the CMD.exe application, right-click it and choose 'Run as Administrator'
-3. In the CMD.exe window, run the command `wsl -- install`
+3. In the CMD.exe window, run the command `wsl --install`
 4. If you hit a problem, try the following:
 
 ```sh
