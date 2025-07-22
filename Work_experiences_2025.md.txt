@@ -5,6 +5,7 @@
 
 
 # Chrishna
+After installing miniconda, we went to: https://satijalab.org/seurat/articles/pbmc3k_tutorial , to download the raw data of the PMBC dataset. Upon obtaining all of data, we began constructing the environment. Using the Anaconda prompt (in administrator mode) to install the required python libraries - scanpy (via pip), anndata, scikit-image and matplotlib (so far) - into the base conda environment. When we first started the analysis everything was going somewhat smoothly, encountering small setbacks such as code being cut out of the page but I digress. However the worst was to come when we started on the "Cluster cells", using the leiden algorithm to identify communities. At first we thought that the issue was solely to do with forgetting to install the module, but later we experienced setback after setback, massive lines of continuous code, eventually we opted to use the CellTypist module, since whatever we did it seemed that the leiden module would not cooperate.
 
 
 
