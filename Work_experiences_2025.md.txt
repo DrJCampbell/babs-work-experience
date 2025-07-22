@@ -13,3 +13,11 @@
 
 
 # Louix
+
+- watched Kurzgesagt - In a Nutshell video on yt about How The Immune ACTUALLY System Works https://youtu.be/lXfEK8G8CUI?si=0G9yDQcdTxape9lI
+- Created an environment in conda for scanpy with a older version of python (v3.12.11),
+- Learned what UMAP was and how different genes are organised with other similar species. 
+- Got organised with folders
+- Ran celltypist and also retrieved the built-in and user-trained custom celltypist models
+- Kept on getting into an error about a value error with a random strand/integer 
+- Went into a meeting about the latest variation of the Corona virus and their links to the previous vaccines with other variation
