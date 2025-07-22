@@ -1,10 +1,28 @@
 # Arata
 
+## 1) Looking around the Francis Crick institute
 
+- We got our lanyards and visitor passes
+- We used the elevator to go up the floors
+- We got our laptops and had a look around the office
+- We got introduced to other people
+
+## 2) Molecular biology 101
+
+- This helped us understand the use of DNA and RNA polymerase to make mRNA molecules during transcription
+- The video showed us how quickly the process occurs as it was in real time
+
+## 3) Using the laptops
+
+- We tried to install Linux
+- While we were waiting for it to download we went on a walk to see more of the building
+- We came back and only my laptop downloaded Linux so we scrapped that idea
+- Instead we installed Miniconda and it worked
 
 
 
 # Chrishna
+After installing miniconda, we went to: https://satijalab.org/seurat/articles/pbmc3k_tutorial , to download the raw data of the PMBC dataset. Upon obtaining all of data, we began constructing the environment. Using the Anaconda prompt (in administrator mode) to install the required python libraries - scanpy (via pip), anndata, scikit-image and matplotlib (so far) - into the base conda environment. When we first started the analysis everything was going somewhat smoothly, encountering small setbacks such as code being cut out of the page but I digress. However the worst was to come when we started on the "Cluster cells", using the Leiden algorithm to identify communities. At first we thought that the issue was solely to do with forgetting to install the module, but later we experienced setback after setback, massive lines of continuous code, eventually we opted to use the CellTypist module, since whatever we did it seemed that the Leiden module would not cooperate.
 
 
 
