@@ -27,7 +27,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 ```
 This is also a piece of code;
-values = [cake, biscuit, scone, bread,]
+values = ["cake", "biscuit", "scone", "bread",]
 for value in values:
 	for char in value:
 		print(char)
