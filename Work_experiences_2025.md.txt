@@ -1,6 +1,23 @@
 # Arata
 
+## 1) Looking around the Francis Crick institute
 
+- We got our lanyards and visitor passes
+- We used the elevator to go up the floors
+- We got our laptops and had a look around the office
+- We got introduced to other people
+
+## 2) Molecular biology 101
+
+- This helped us understand the use of DNA and RNA polymerase to make mRNA molecules during transcription
+- The video showed us how quickly the process occurs as it was in real time
+
+## 3) Using the laptops
+
+- We tried to install Linux
+- While we were waiting for it to download we went on a walk to see more of the building
+- We came back and only my laptop downloaded Linux so we scrapped that idea
+- Instead we installed Miniconda and it worked
 
 
 
