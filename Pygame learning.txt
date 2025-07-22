@@ -47,6 +47,10 @@ List of event - [QUIT, ACTIVEEVENT, KEYDOWN, KEYUP, MOUSEMOTION, MOUSEBUTTONUP,
 
 exit() - Imported from the "sys" module, closes all code
 
+p.image.load("Path of your image") - For importing an image, keep the image and
+                                     the python file in the same folder
+
+
 
 
  
