@@ -1,9 +1,11 @@
 import pygame, sys, random
 from pygame.locals import *
+
+# Initialization
 pygame.init()
 pygame.font.init()
 
-#Global dictionary
+# Global colour library
 colors = {
     "black":   (0, 0, 0),
     "white":   (255, 255, 255),
@@ -17,83 +19,78 @@ colors = {
     "orange":  (255, 165, 0),
     "purple":  (128, 0, 128),
     "brown":   (165, 42, 42),
-    "pink":    (255, 192, 203)
+    "pink":    (255, 192, 203),
+    "midnight_blue": (25, 25, 112)
 }
 
-
-def dis_formula(a,b,c,d):
+# Utility Functions
+def dis_formula(a, b, c, d):
     dx = a - c
     dy = b - d
-    distance_squared = dx**2 + dy**2
-    return distance_squared
+    return dx**2 + dy**2
 
-def ran_color(): # To be used with the colors dictionary
+def ran_color():
     ran_choice = random.choice(list(colors.values()))
+    while ran_choice == colors["midnight_blue"]:
+        ran_choice = ran_color()
     return ran_choice
-    
 
+# Display Setup
 screen_width = 640
 screen_height = 480
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("Balloon Colour Game")
+clock = pygame.time.Clock()
+
+# Game Elements
 radius = 75
-
-font = pygame.font.SysFont(None, 36)
-leaderboard = []
-score = 0
-
-screen = pygame.display.set_mode((screen_width,
-                                  screen_height))
-pygame.display.set_caption("Balloon luck game")
-screen.fill((0,0,0))
-current_color = ran_color()
-
-
 x = screen_width // 2
 y = screen_height // 2
+current_color = ran_color()
 
+# Font & Text Setup
+font = pygame.font.SysFont(None, 36)
 
+# Game State
+score = 0
+highscore = 0
+
+#  Main Game Loop
 while True:
-
+    # Event Handling
     for event in pygame.event.get():
-        if (event.type == QUIT):
+        if event.type == QUIT:
             pygame.quit()
             sys.exit(0)
-        if (event.type == MOUSEBUTTONDOWN):
+        if event.type == MOUSEBUTTONDOWN:
             mouse_x, mouse_y = event.pos
             if dis_formula(mouse_x, mouse_y, x, y) <= radius**2:
                 current_color = ran_color()
-                while current_color == colors["midnight_blue"]:
-                    current_color = ran_color()
-                    
-
                 if current_color != colors["black"]:
                     score += 1
-                    
                 else:
-                    leaderboard.append(score)
+                    if score > highscore:
+                        highscore = score
                     score = 0
 
-            else:
-                pass
-    colors["midnight_blue"] = (25, 25, 112)
+    # Drawing
     screen.fill(colors["midnight_blue"])
+    pygame.draw.circle(screen, current_color, (x, y), radius)
 
-    pygame.draw.circle(screen, current_color, (x,y), radius)
+    # Score Display
     score_text = font.render(f"Score: {score}", True, colors["white"])
-    text_rect = score_text.get_rect(topright = (screen_width - 10, 10))
-    if len(leaderboard) == 0:
-        i = " "
-    else:
-        i = leaderboard[-1]
+    score_rect = score_text.get_rect(topright=(screen_width - 10, 10))
+    screen.blit(score_text, score_rect)
 
-    
-    score_text2 = font.render(f"Highscore: {i}", True, colors["white"])
-    text_rect2 = score_text2.get_rect(topleft = (10,50))
+    highscore_text = font.render(f"Highscore: {highscore}", True, colors["white"])
+    highscore_rect = highscore_text.get_rect(topleft=(10, 50))
+    screen.blit(highscore_text, highscore_rect)
 
-    screen.blit(score_text, text_rect)
-    screen.blit(score_text2, text_rect2)
-                
+    # Update Display
     pygame.display.update()
-    
+    clock.tick(60)
 
-    
+
+
+
 
