@@ -20,25 +20,31 @@ clock = pygame.time.Clock()
 
 # Game Elements
 balloon = pygame.image.load("Balloon.png").convert()
-popped_balloon = pygame.image.load("Balloon_popped.png").convert()
+popped_balloon = pygame.image.load("Balloon_popped.png").convert_alpha()
+original_balloon = balloon.copy()
 
 width_b, height_b = balloon.get_size()
+print(width_b, height_b)
 width_p_b, height_p_b = popped_balloon.get_size()
-max_balloon_w = width_b * 1.5
-max_balloon_h = height_b * 1.5
+print(width_p_b, height_p_b)
+max_balloon_w = width_b * 0.22
+max_balloon_h = height_b * 0.22
 
-final_size = random.choice([max_balloon_w + 10, max_balloon_h + 10])
+final_size_w = random.choice([max_balloon_w + 10, max_balloon_h + 20])
+final_size_h = random.choice([max_balloon_w + 10, max_balloon_h + 20])
+final_size_dimen = (final_size_w, final_size_h)
 balloon_rect = balloon.get_rect(center=screen.get_rect().center)
-og_width_b, og_height_b = balloon.get_size()
+og_width_b, og_height_b = original_balloon.get_size()
 scale = min(screen_w / og_width_b , screen_h / og_height_b)
 initial_scale = scale * 0.3
-new_size = (int(og_width_b * initial_scale), int(og_height_b * initial_scale))
+balloon_scale = initial_scale
 
-balloon = pygame.transform.smoothscale(balloon, new_size)
+new_size = (int(og_width_b * balloon_scale), int(og_height_b * balloon_scale))
+balloon = pygame.transform.smoothscale(original_balloon, new_size)
 balloon_rect = balloon.get_rect(center=(screen_w // 2, screen_h // 2))
 # Font & Text Setup
 font = pygame.font.SysFont(None, 36)
-balloon_scale = 1.01
+
 # Game State
 running = True
 put_popped_balloon = False
@@ -51,19 +57,24 @@ while running:
     if pygame.mouse.get_pressed()[0]:
         mouse_pos = pygame.mouse.get_pos()
         if balloon_rect.collidepoint(mouse_pos):
-            balloon_scale *= 1.01  # Increase scale
+            balloon_scale += 0.01  # Increase scale
             new_size = (int(og_width_b * balloon_scale), int(og_height_b * balloon_scale))
             balloon = pygame.transform.smoothscale(original_balloon, new_size)
             balloon_rect = balloon.get_rect(center=(screen_w // 2, screen_h // 2))  # Keep centered
-
-            if new_size[0] > final_size or new_size[1] > final_size:
+            print(balloon.get_size()[0])
+            print(final_size_dimen[0])
+            if balloon.get_size()[0] > max_balloon_w or balloon.get_size()[1] > max_balloon_h:
                 put_popped_balloon = True
-
     # Drawing
     screen.fill((0,0,0))
-    screen.blit(balloon, balloon_rect)
+    
     if put_popped_balloon:
-        screen.blit(popped_balloon, balloon_rect)
+    # Scale popped image to match balloon size
+        popped_scaled = pygame.transform.smoothscale(popped_balloon, balloon.get_size())
+        popped_rect = popped_scaled.get_rect(center=(screen_w // 2, screen_h // 2))
+        screen.blit(popped_scaled, popped_rect)
+    else:
+        screen.blit(balloon, balloon_rect)
 
     #Update Display
     pygame.display.flip()
