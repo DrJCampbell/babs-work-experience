@@ -28,7 +28,7 @@ PURPLE = (128, 0, 128)
 # Ball properties
 ball_radius = 10
 speed = 5
-ai_step = 5  # AI movement speed
+ai_step = 4  # AI movement speed
 
 # Game duration
 game_duration = 30000  # 30 seconds
