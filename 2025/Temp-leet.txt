@@ -1,0 +1,16 @@
+twoSum(nums, target):
+        counter = 0
+        for i in range(len(nums)):
+            counter += 1
+            
+            if counter == len(nums):
+                num[i_val] = pass
+            else:
+                i_val = i + 1
+            
+            p_result = num[i] + num[i_val]
+            if p_result == target:
+                answers = []
+                answers.append(nums.index(num[i]))
+                answers.append(nums.index(num[i_val]))
+                return answers
