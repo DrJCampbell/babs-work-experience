@@ -5,4 +5,4 @@ In Feb 2023, I hosted two Camden students at the Crick . Their goal was to imple
 
 In July 2024, Rene and Tahir continued the project. Their work was performed using Windows laptops with an Ubuntu Linux distribution installed using Windows Subsystem for Linux (WSL). They began with an analysis of the pbmc3k data set using Scanpy but then extended this to include an analysis of a fetal bone marrow blood cell data set downloaded from the EBI.
 
-
+In August 2026, Fabian and Eoin joined the team for a week of python single cell work. They worked through the scanpy pbm3k tutorial and the cell typist tutorial. Next they created their own analysis workflow using different datasets downloaded from CellxGene. The project included describing the published qc, running pre-processing, and applying a celltypist model to compare against the authors cell type labels. 
