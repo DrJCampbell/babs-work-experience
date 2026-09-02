@@ -23,3 +23,7 @@ Then open `fabian_endometrium_project.ipynb` and select `.venv/bin/python` as th
 automatically on first run via `pooch`.
 
 ![Their UMAP vs my attempt, same CellTypist labels](figures/start_vs_finish.png)
+
+![my UMAP coloured by different labels](figures/What-drives-the-UMAP-islands.png)
+
+![Their UMAP coloured by different labels](figures/on-the-authors-original-embedding.png)
