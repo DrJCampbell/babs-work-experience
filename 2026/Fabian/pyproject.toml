@@ -1,0 +1,35 @@
+[project]
+name = "endo-project"
+version = "0.1.0"
+description = "Re-processing and annotating a published endometrium single-cell dataset (scanpy + CellTypist)."
+readme = "README.md"
+authors = [
+    { name = "Fabian", email = "fabianbyron00@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "anndata>=0.13.2",
+    "celltypist>=1.7.1",
+    "doubletdetection>=4.3.0.post1",
+    "ipykernel>=7.3.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.1",
+    "numpy>=2.5.2",
+    "pandas>=3.0.5",
+    "pip>=26.2.1",
+    "pooch>=1.9.0",
+    "python-igraph>=1.0.0",
+    "scanpy>=1.12.3",
+    "scikit-image>=0.26.0",
+    "scikit-learn>=1.9.0",
+    "scipy>=1.18.1",
+    "seaborn>=0.13.2",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "ruff>=0.16.4",
+]
