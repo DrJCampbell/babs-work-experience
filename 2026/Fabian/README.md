@@ -23,8 +23,7 @@ git clone https://github.com/DrJCampbell/babs-work-experience.git
 `babs-work-experience/2026/Fabian` *directly* — not the whole `babs-work-experience` repo, or
 the kernel picker won't find this project's `.venv`.
 
-**3. Install the environment.** Open a terminal in VS Code (**Terminal → New Terminal** — it
-opens in this folder) and run:
+**3. Install the environment.** Open a terminal in VS Code and run:
 
 ```bash
 uv sync
