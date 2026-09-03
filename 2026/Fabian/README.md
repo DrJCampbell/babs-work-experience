@@ -48,11 +48,11 @@ show why.
 
 ![Authors' UMAP vs my re-embedding, same CellTypist labels](figures/start_vs_finish.png)
 
-What drives the islands in my embedding? The same UMAP coloured by candidate covariates.
+**What drives the islands in my embedding?** The same UMAP coloured by candidate covariates.
 The islands line up most with donor / sample.
 
 ![My re-embedding coloured by candidate covariates](figures/What-drives-the-UMAP-islands.png)
 
-The authors' original (integrated) embedding, coloured by the same covariates. Here the donors are well mixed. I briefly explore batch-integration as a reason for this in the notebook's appendix.
+**The authors' original (integrated) embedding**, coloured by the same covariates. Here the donors are well mixed. I briefly explore batch-integration as a reason for this in the notebook's appendix.
 
 ![The authors' original embedding coloured by the same covariates](figures/on-the-authors-original-embedding.png)
